@@ -56,8 +56,8 @@ public class EffFakeDamage extends Effect {
                     instance = packet.getConstructor(handle.getClass().getSuperclass().getSuperclass().getSuperclass(), int.class).newInstance(handle, 1);
                 } else {
                     instance = packet.getConstructor().newInstance();
-                    ReflectionUtils.setField(instance, "a", player.getEntityId());
-                    ReflectionUtils.setField(instance, "b", 1);
+                    ReflectionUtils.setField(instance, "f", player.getEntityId());
+                    ReflectionUtils.setField(instance, "g", 1);
                 }
                 for (Player viewer : viewers) {
                     ReflectionUtils.sendPacket(viewer, instance);
